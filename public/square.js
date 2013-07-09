@@ -20,14 +20,17 @@ $('form').
     var total=Math.round(prices)/100;
     total=total.toFixed(2);
     $('#cost').text('$' + total);
-    });
-    
-    $.post('#', $('#form').serialize());
-   
-
-
-
-
-
   });
+  
+  var formData = $('form').serialize();
+
+  $('#submit').click(function(){
+    $.post('/shop', function(formData) {
+      $("#checkout_message").html("Thanks! Will be ready in 10 minutes.");
+      $(this).fadeOut(1000);
+    });
+  });
+
+});
+
 
