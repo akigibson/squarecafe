@@ -7,6 +7,6 @@ get '/' do
 end
 
 post '/shop' do
-  shop (params)
+  "Thanks"
 end
 

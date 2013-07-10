@@ -22,13 +22,13 @@ $('form').
     $('#cost').text('$' + total);
   });
   
-  var formData = $('form').serialize();
+  
 
   $('#submit').click(function(){
-    $.post('/shop', function(formData) {
+    $.post('/shop', $('form').serialize(), function(){
       $("#checkout_message").html("Thanks! Will be ready in 10 minutes.");
-      $(this).fadeOut(1000);
     });
+    $(this).fadeOut(1000);
   });
 
 });
