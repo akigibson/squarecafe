@@ -12,6 +12,11 @@ $('form').
   // the function to call when our the element changes (our anonymous function, here)
   on('change', 'select', function(){
     $('form').append($('form').find('div').first().html());
+
+    $("#drink_image").append('<img height= "83" width="83" src=/' +
+        $('option:selected', this).attr('value') + '.jpg />'
+      );
+
     count+=1;
     $('#drinks').text(count);
 
@@ -20,6 +25,8 @@ $('form').
     var total=Math.round(prices)/100;
     total=total.toFixed(2);
     $('#cost').text('$' + total);
+
+
   });
   
   
